@@ -1,0 +1,67 @@
+/* simple modern card centered, background image */
+:root{
+  --card-w: 420px;
+  --accent: #28a745;
+  --blue: #1a73e8;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif}
+body{
+  display:flex;align-items:center;justify-content:center;
+  background: #f2f5f9;
+  min-height:100vh;
+}
+
+.page-bg{
+  position:fixed;inset:0;
+  background-image: url("image.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.45);
+  z-index:-1;
+}
+
+/* card */
+.form-wrapper{width:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{
+  width:var(--card-w);
+  background: #fff;
+  border-radius:12px;
+  padding:24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.card h2{margin:0 0 6px;font-size:20px;color:var(--blue)}
+.subtitle{margin:0 0 18px;color:#6b7280;font-size:13px}
+
+/* rows */
+.form-row{margin-bottom:14px}
+.form-row label{display:block;margin-bottom:6px;color:#374151;font-weight:600;font-size:13px}
+.form-row input{width:100%;padding:10px;border-radius:8px;border:1px solid #e5e7eb;font-size:14px;background:#fbfdff}
+.form-row.two{display:flex;gap:12px}
+.form-row.two > div{flex:1}
+
+/* button */
+.btn{
+  width:100%;padding:12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-weight:700;font-size:15px;cursor:pointer;
+}
+.btn:hover{opacity:0.95}
+
+/* result card */
+.result-card{
+  width:var(--card-w);
+  margin-top:18px;
+  background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08)
+}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:50}
+.modal-content{background:#fff;padding:22px;border-radius:10px;width:320px;text-align:center}
+.modal-content h3{margin:0 0 10px;color:#d93025}
+.modal-content button{margin-top:12px;padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:8px;cursor:pointer}
+
+/* responsive */
+@media (max-width:460px){
+  :root{--card-w:92%}
+  .form-row.two{flex-direction:column}
+}

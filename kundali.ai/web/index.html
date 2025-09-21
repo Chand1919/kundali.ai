@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welfare Eligibility - Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background -->
+  <div class="page-bg"></div>
+
+  <!-- Form Wrapper -->
+  <div class="form-wrapper">
+    <!-- Registration Form -->
+    <form id="userForm" class="card">
+      <h2>User Registration</h2>
+      <p class="subtitle">Fill carefully. This demo uses mock data only.</p>
+
+      <!-- Full Name -->
+      <div class="form-row">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+      </div>
+
+      <!-- Age and DOB -->
+      <div class="form-row two">
+        <div>
+          <label for="age">Age</label>
+          <input id="age" type="number" placeholder="Age" min="0" required />
+        </div>
+        <div>
+          <label for="dob">DOB</label>
+          <input id="dob" type="date" required />
+        </div>
+      </div>
+
+      <!-- Aadhaar Number -->
+      <div class="form-row">
+        <label for="aadhaar">Aadhaar Number</label>
+        <input id="aadhaar" type="text" maxlength="12" pattern="\d{12}" placeholder="12-digit Aadhaar" required />
+      </div>
+
+      <!-- PAN Number -->
+      <div class="form-row">
+        <label for="pan">PAN Number</label>
+        <input id="pan" type="text" maxlength="10" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" placeholder="ABCDE1234F" required />
+      </div>
+
+      <!-- Ration Card Number -->
+      <div class="form-row">
+        <label for="ration">Ration Card Number</label>
+        <input id="ration" type="text" placeholder="Ration card (optional)" />
+      </div>
+
+      <!-- Declared Assets -->
+      <div class="form-row">
+        <label for="declared_assets">Declared Assets (INR)</label>
+        <input id="declared_assets" type="number" placeholder="Optional - declared assets" min="0" />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Check Eligibility & Generate PDF</button>
+    </form>
+
+    <!-- Result Card -->
+    <div id="result" class="result-card" style="display:none;">
+      <!-- Live result will appear here after submission -->
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="errorModal" class="modal" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal-content">
+      <h3>Error</h3>
+      <p id="errorMsg"></p>
+      <button id="closeBtn">OK</button>
+    </div>
+  </div>
+
+  <!-- jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Your Script -->
+  <script src="script.js"></script>
+</body>
+</html>
